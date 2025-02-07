@@ -39,17 +39,24 @@ The application allows users to upload SVG files as profile images without prope
 1. **Access the Admin Panel**
    - Navigate to: [http://localhost/modx/manager/](http://localhost/modx/manager/)
    - Log in with valid credentials.
+   ![image](https://github.com/user-attachments/assets/d433e893-934c-4d26-a89f-016c13b96cdf)
 
 2. **Upload a Malicious SVG**
    - Click on the upload button and choose the file option.
    - Select and upload a malicious SVG file.
+   ![image](https://github.com/user-attachments/assets/4866b07c-0162-4d2e-8b72-965bb546789b)
+
    - Click the upload button. The file is uploaded successfully without detection.
+   ![image](https://github.com/user-attachments/assets/8ecb40db-9b30-422e-b4ab-cf7d3f3d59ad)
+   ![image](https://github.com/user-attachments/assets/55b95fd2-a897-4cef-ac83-9a73edbf2167)
 
 3. **Open the Profile Image in a New Tab**
    - Click on the profile icon and open it in a new tab.
+   ![image](https://github.com/user-attachments/assets/339d8f3b-4804-443c-9fd2-476770c97af0)
 
 4. **Observe the Execution of the Injected JavaScript Payload**
    - The malicious JavaScript code executes in the browser.
+   ![image](https://github.com/user-attachments/assets/a16cee66-80ce-4ce1-a8cc-bd0fb1dc0d34)
 
 ## Impact
 
