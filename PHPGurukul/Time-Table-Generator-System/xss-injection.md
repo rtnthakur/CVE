@@ -2,7 +2,7 @@
 
 ## Vulnerability Overview
 
-A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the `edit-profile.php` file of the **PHPGurukul Timetable Generator System Project in PHP v1.0**. This vulnerability allows remote attackers to execute arbitrary JavaScript code via the `adminname` POST request parameter.
+A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the `profile.php` file of the **PHPGurukul Timetable Generator System Project in PHP v1.0**. This vulnerability allows remote attackers to execute arbitrary JavaScript code via the `adminname` POST request parameter.
 
 ---
 
