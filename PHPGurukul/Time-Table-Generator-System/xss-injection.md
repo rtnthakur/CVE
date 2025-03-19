@@ -19,7 +19,7 @@ A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the `edit
 | Product Name        | Timetable Generator System using PHP and MySQL                         |
 | Version             | v1.0                                                                    |
 | Vendor              | PHPGurukul                                                              |
-| Affected File       | `edit-profile.php`                                                      |
+| Affected File       | `profile.php`                                                      |
 | Affected Parameter  | `adminname`                                                             |
 | Request Method      | POST                                                                    |
 | Vulnerability Type  | Reflected Cross-Site Scripting (XSS)                                    |
