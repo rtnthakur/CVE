@@ -23,16 +23,19 @@ An HTML Injection vulnerability was discovered in the `add-foreigners-ticket.php
 
 1. **Log in to the Admin Panel**  
    - Access the admin login page.  
-   - Enter valid credentials to sign in.  
+   - Enter valid credentials to sign in.
+   ![image](https://github.com/user-attachments/assets/c6dec6cc-3bb5-4e8f-83a4-d242ea01ad55)
 
 2. **Navigate to the Foreigners Ticket Section**  
    - Go to the "Foreigners Ticket" section.  
-   - Click the "Add Ticket" button and fill in the input fields.  
+   - Click the "Add Ticket" button and fill in the input fields.
+   ![image](https://github.com/user-attachments/assets/a2a735a1-d47f-487d-a632-c53bd99cd3f3)
 
 3. **Intercept the Request**  
    - Use **Burp Suite** to capture the request.  
-   - Enable the Burp Suite Interceptor to monitor traffic.  
-
+   - Enable the Burp Suite Interceptor to monitor traffic.
+   ![image](https://github.com/user-attachments/assets/131074b7-e4d0-46d8-86ed-46af8e38cef6)
+ 
 4. **Modify the Request**  
    - Capture the request when updating user details.  
    - Forward it to the Burp Suite Repeater.  
@@ -40,9 +43,12 @@ An HTML Injection vulnerability was discovered in the `add-foreigners-ticket.php
      ```html
      <h1>Hello</h1>
      ```
-
+   - ![image](https://github.com/user-attachments/assets/e812015d-18c5-44c1-9c3e-35c7f97604ee)
+   
 5. **Send and Observe**  
-   - The injected HTML will be rendered on the page, confirming the vulnerability.  
+   - The injected HTML will be rendered on the page to confirm the vulnerability.
+   ![image](https://github.com/user-attachments/assets/32a7fec4-4b2d-4032-a296-5415c9e66630)
+ 
 
 ---
 
@@ -53,4 +59,4 @@ An HTML Injection vulnerability was discovered in the `add-foreigners-ticket.php
 
 ---
 
-**Note**: Always ensure systems are updated and follow secure coding practices to prevent such vulnerabilities.
+**Note**: Always update systems and follow secure coding practices to prevent such vulnerabilities.
