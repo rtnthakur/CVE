@@ -24,15 +24,20 @@ An HTML Injection vulnerability was discovered in the `edit-ticket.php` file of 
 
 1. **Log in to the Admin Panel**  
    - Access the admin login page.  
-   - Enter valid credentials to sign in.  
+   - Enter valid credentials to sign in.
+   ![image](https://github.com/user-attachments/assets/46f28a9d-ceb1-4f58-9fbb-6570613e6f66)
 
 2. **Navigate to the Manage Type Ticket Section**  
-   - Go to the "Manage Type Ticket" section in the Admin Dashboard.  
-   - Click the "Edit" button for any ticket.  
+   - Go to the "Manage Type Ticket" section in the Admin Dashboard.
+   ![image](https://github.com/user-attachments/assets/a1e73fce-f771-4cd1-bd21-6761fe3b221f)
+
+   - Click the "Edit" button for any ticket.
+   ![image](https://github.com/user-attachments/assets/64f96e57-c641-43a3-8718-80197133e975)
 
 3. **Intercept the Request**  
    - Use **Burp Suite** to capture the request.  
-   - Enable the Burp Suite Interceptor to monitor traffic.  
+   - Enable the Burp Suite Interceptor to monitor traffic.
+   ![image](https://github.com/user-attachments/assets/24a142ce-1e53-4a42-9ee1-f486e629f7de)
 
 4. **Modify the Request**  
    - Capture the request when updating ticket details.  
@@ -41,9 +46,12 @@ An HTML Injection vulnerability was discovered in the `edit-ticket.php` file of 
      ```html
      <h1>Hello</h1>
      ```
+   - ![image](https://github.com/user-attachments/assets/0667a462-bbd0-48dc-8ebe-cc2c37cbb65c)
 
 5. **Send and Observe**  
-   - The injected HTML will be rendered on the page, confirming the vulnerability.  
+   - The injected HTML will be rendered on the page to confirm the vulnerability.
+   ![image](https://github.com/user-attachments/assets/dfce4f77-f862-4644-a2f5-e73ea659746b)
+
 
 ---
 
