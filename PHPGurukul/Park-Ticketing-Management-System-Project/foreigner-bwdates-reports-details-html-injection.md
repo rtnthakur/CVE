@@ -27,16 +27,19 @@ An HTML Injection vulnerability was discovered in the `foreigner-bwdates-reports
 
 1. **Log in to the Admin Panel**  
    - Access the admin login page.  
-   - Enter valid credentials to sign in.  
+   - Enter valid credentials to sign in.
+   ![image](https://github.com/user-attachments/assets/40b7665a-e900-481e-8979-6efb09c74f0d)
 
 2. **Navigate to the Reports Section**  
    - Go to the "Report" section in the Admin Dashboard.  
-   - Click on "Foreigners People Report".  
-
+   - Click on "Foreigners People Report".
+   ![image](https://github.com/user-attachments/assets/52afa59e-ee2b-4aa0-b7e3-c722cc56bccf)
+  
 3. **Intercept the Request**  
    - Use **Burp Suite** to capture the request.  
-   - Enable the Burp Suite Interceptor to monitor traffic.  
-
+   - Enable the Burp Suite Interceptor to monitor traffic.
+   ![image](https://github.com/user-attachments/assets/7f376d69-c14f-40cb-96d6-17b8db69d4f2)
+ 
 4. **Modify the Request**  
    - Capture the request when submitting date range details.  
    - Forward it to the Burp Suite Repeater.  
@@ -44,9 +47,13 @@ An HTML Injection vulnerability was discovered in the `foreigner-bwdates-reports
      ```html
      <h1>Hello</h1>
      ```
+   - ![image](https://github.com/user-attachments/assets/361a5ea1-a123-4bc5-86f7-534797d73a0a)
+
 
 5. **Send and Observe**  
-   - The injected HTML will be rendered on the page, confirming the vulnerability.  
+   - The injected HTML will be rendered on the page, confirming the vulnerability.
+   ![image](https://github.com/user-attachments/assets/8c7bbb0a-1f02-4257-acae-e072bc9c5e95)
+  
 
 ---
 
