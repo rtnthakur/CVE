@@ -43,7 +43,7 @@ Park Ticketing Management System Using PHP and MySQL (Version 2.0)
      ```
    - ![image](https://github.com/user-attachments/assets/cb112a7c-1772-4300-84cf-05a55fd40f93)
    
-   - Forward the request.  
+5. **Forward the request:**.  
 
 6. **Observe the Result:**  
    - The injected script executes, displaying an alert box.
