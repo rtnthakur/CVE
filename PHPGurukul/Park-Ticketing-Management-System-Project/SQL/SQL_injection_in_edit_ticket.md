@@ -24,19 +24,19 @@ A SQL injection vulnerability was discovered in the "Park-Ticketing-Management-S
 1. **Log in to the Admin Panel:**
    - Open the admin login page.
    - Enter credentials and sign in.  
-   ![Login Page](media/image1.png)
+   ![image](https://github.com/user-attachments/assets/bf603d80-b455-410f-b068-2fc7b1f89dff)
 
 2. **Navigate to Admin Dashboard:**
    - Go to the "Manage Type Ticket" section.
    - Click the "Edit" button.  
-   ![Manage Type Ticket Section](media/image2.png)
+   ![image](https://github.com/user-attachments/assets/61a1d7c7-76ba-4b1f-872e-4231ada66e41)
    - Make changes to the ticket and click "Update".  
-   ![Update Ticket](media/image3.png)
+   ![image](https://github.com/user-attachments/assets/f2e3a86a-c85a-43ad-8dba-d4e840960865)
 
 3. **Intercept the Request:**
    - Use Burp Suite to capture traffic.
    - Enable the interceptor to capture the request.  
-   ![Burp Suite Interceptor](media/image4.png)
+   ![image](https://github.com/user-attachments/assets/968e9bf8-eaed-49d0-9f68-b01c7fe5b2a9)
 
 4. **Modify the Request:**
    - Capture the request when updating ticket details.
@@ -45,12 +45,13 @@ A SQL injection vulnerability was discovered in the "Park-Ticketing-Management-S
      ```
      (('%2b(select*from(select(sleep(20)))a)%2b'))
      ```  
-   ![Payload Injection](media/image5.png)
+   - !![image](https://github.com/user-attachments/assets/e15e1ee1-f8b1-40f6-a0c7-1c7fefdd3e4f)
 
 5. **Send the Modified Request:**
    - Forward the request in Burp Suite Repeater.
    - Observe a 20-second delay in response, confirming the SQL injection.  
-   ![Delayed Response](media/image6.png)
+   ![image](https://github.com/user-attachments/assets/20c88329-14b4-453b-a2a6-84e900a4929d)
+
 
 ---
 
