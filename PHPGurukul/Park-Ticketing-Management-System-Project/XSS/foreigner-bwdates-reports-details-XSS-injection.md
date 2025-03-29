@@ -1,65 +1,56 @@
-# XSS Injection Vulnerability in Park Ticketing Management System
+# Cross-Site Scripting (XSS) Vulnerability in Park Ticketing Management System
 
-**Affected System:**  
-Park Ticketing Management System Using PHP and MySQL (Version 2.0)  
-**Vendor:** PHPGurukul  
-**Official Website:** [https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/](https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/)  
-
----
-
-### Vulnerability Details
-
-| **Field**               | **Details**                                                                 |
-|-------------------------|-----------------------------------------------------------------------------|
-| Affected Vendor         | PHPGurukul                                                                  |
-| Affected Code File      | `foreigner-bwdates-reports-details.php`                                     |
-| Vulnerable Parameters   | `fromdate`, `todate` (POST request)                                        |
-| Attack Method           | POST                                                                        |
-| Vulnerability Type      | Cross-Site Scripting (XSS)                                                 |
-| Affected Version        | v2.0                                                                        |
-| Impact                  | Remote arbitrary JavaScript execution via unsanitized user input.           |
+**Vendor**: PHPGurukul  
+**Affected Product**: Park Ticketing Management System Using PHP and MySQL  
+**Affected Version**: v2.0  
+**Vulnerability Type**: XSS Injection  
+**Affected File**: `ptms/foreigner-bwdates-reports-details.php`  
+**Affected Parameters**: `fromdate` and `todate` (POST request)  
+**Official Website**: [https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/](https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/)  
 
 ---
 
-### Steps to Reproduce
-1. **Log in to the Admin Panel:**  
+## **Description**
+A Cross-Site Scripting (XSS) vulnerability was discovered in the `foreigner-bwdates-reports-details.php` file of the PHPGurukul Park Ticketing Management System. The vulnerability allows remote attackers to inject arbitrary JavaScript code via the `fromdate` and `todate` parameters in a POST request, leading to code execution in the context of the victim's browser.
+
+---
+
+## **Steps to Reproduce**
+1. **Log in to the Admin Panel**  
    - Access the admin login page and authenticate with valid credentials.
-    ![image](https://github.com/user-attachments/assets/e570247e-32f3-41f6-8737-14e2072fc0fa)
-
-2. **Navigate to the Report Section:**  
-   - Go to "Report" → "Foreigners People Report."  
-   - Select any date range in the `fromdate` and `todate` fields.
-    ![image](https://github.com/user-attachments/assets/49be39be-d969-4bf2-a084-2d6b095d0f36)
+   ![image](https://github.com/user-attachments/assets/bb03345c-1628-499c-81ad-6563337ecdd3)
   
-3. **Intercept the Request:**  
-   - Use Burp Suite to capture the POST request.  
-   - Enable the Interceptor to modify the request.
-    ![image](https://github.com/user-attachments/assets/86cd0e80-b19f-4dcc-965e-a9c7475bce30)
+2. **Navigate to the Report Section**  
+   - Go to the "Report" section and select "Foreigners People Report."
+   ![image](https://github.com/user-attachments/assets/0e82e40c-9416-446d-bf8e-f9e4073626e1)
+
+3. **Intercept the Request**  
+   - Use Burp Suite to intercept the POST request containing the `fromdate` and `todate` parameters.
+   ![image](https://github.com/user-attachments/assets/b286da72-2b9e-4730-8439-fd2640b941a7)
   
-4. **Inject XSS Payload:**  
-   - Modify the `fromdate` or `todate` parameter with:  
-     ```html
-     <script>alert(1)</script>
-     ```
-   - ![image](https://github.com/user-attachments/assets/cb112a7c-1772-4300-84cf-05a55fd40f93)
-   
-5. **Forward the request:**.  
+4. **Inject XSS Payload**  
+   - Modify the parameters with the following payloads:  
+     - `fromdate`: `<script>alert(1)</script>`  
+     - `todate`: `<script>alert(2)</script>`
+   - ![image](https://github.com/user-attachments/assets/3f302fed-e85b-43d8-afc6-1e2d91c568cc)
 
-6. **Observe the Result:**  
-   - The injected script executes, displaying an alert box.
-   ![image](https://github.com/user-attachments/assets/442da82a-086c-4df1-b9d8-3c93587a3b0c)
-  
+5. **Observe the Result**  
+   - The injected script executes when the page renders the manipulated input.
+     ![image](https://github.com/user-attachments/assets/7f217dd9-76ee-4474-bc63-bfc0f41c7019)
+     ![image](https://github.com/user-attachments/assets/ca72929d-f89f-4c06-b0ff-9918a9e3f7f2)
 
----
 
-### Recommended Mitigations
-- Sanitize user inputs using functions like `htmlspecialchars()` or `strip_tags()`.  
-- Implement Content Security Policy (CSP) headers.  
-- Validate date formats strictly before processing.  
-- Refer to:  
+
+## **Mitigation Recommendations**
+- Implement input validation and output encoding for user-supplied data.  
+- Use security libraries like HTMLPurifier to sanitize inputs.  
+- Follow OWASP guidelines for XSS prevention:  
   - [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)  
+- Refer to PortSwigger's XSS mitigation guide:  
   - [PortSwigger XSS Guide](https://portswigger.net/web-security/cross-site-scripting)  
 
 ---
 
-**Note:** The vulnerability allows arbitrary code execution, posing a significant security risk. Immediate remediation is advised.  
+## **References**
+- [PHPGurukul Official Website](https://phpgurukul.com/)  
+- [OWASP XSS Prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)  
