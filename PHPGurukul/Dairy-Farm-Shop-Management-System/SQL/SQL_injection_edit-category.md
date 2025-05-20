@@ -70,4 +70,3 @@ A SQL injection vulnerability was discovered in the PHPGurukul Dairy Farm Shop M
 
 --- 
 
-**Note**: The screenshots referenced in the original document are omitted in this markdown version for brevity. Ensure to include them in the final report if needed.
