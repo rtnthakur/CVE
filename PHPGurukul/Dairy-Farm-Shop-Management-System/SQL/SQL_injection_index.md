@@ -54,8 +54,13 @@ A critical time-based blind SQL injection vulnerability was discovered in the lo
 ---
 
 ## Recommended Mitigations
-1. **Immediate Actions**:
-   - Disable public access to the system until patched
-   - Audit logs for suspicious login attempts
+- **Input Validation**: Sanitize all user-supplied input for the `companyname` parameter.
+- **Prepared Statements**: Use parameterized queries to separate SQL logic from data.
+- **Database Permissions**: Restrict database user privileges to minimum required.
+- **Web Application Firewall**: Deploy a WAF to filter malicious SQL payloads.
+- **Security Headers**: Implement CSP headers to reduce injection risks.
 
+**Reference**: [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+
+---
 
